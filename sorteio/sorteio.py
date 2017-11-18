@@ -2,11 +2,11 @@ import random# biblioteca python para sorteios
 import csv# biblioteca python para ler arquivos csv com lista de convidados
 import sys
 
-with open('presentes.csv') as csvfile:
+with open('participantes.csv') as csvfile:
     reader = csv.DictReader(csvfile)
-    presentes = []
+    participantes = []
     for row in reader:
-        presentes.append(row['email'])
+        participantes.append(row['e-mail'])
 
 while True:
     print('S para sorteio, P para parar')
@@ -15,8 +15,8 @@ while True:
     else:
         opt = raw_input()
     if opt in ['S', 's']:
-        ganhador = random.sample(presentes, 1)
-        presentes.remove(ganhador[0])
+        ganhador = random.sample(participantes, 1)
+        participantes.remove(ganhador[0])
         print(ganhador[0])
     else:
         break

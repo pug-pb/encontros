@@ -1,9 +1,8 @@
 import random# biblioteca python para sorteios
-#import webbrowser# biblioteca python para abrir navegadores
 import csv# biblioteca python para ler arquivos csv com lista de convidados
 import sys
 
-with open('convidados.csv') as csvfile:
+with open('presentes.csv') as csvfile:
     reader = csv.DictReader(csvfile)
     presentes = []
     for row in reader:
@@ -19,6 +18,5 @@ while True:
         ganhador = random.sample(presentes, 1)
         presentes.remove(ganhador[0])
         print(ganhador[0])
-        #webbrowser.open(ganhador[0])
     else:
         break
